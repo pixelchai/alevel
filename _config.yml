@@ -1,0 +1,37 @@
+# Basic
+title:               "ALevel"
+
+# URL
+baseurl:            "/alevel"
+permalink:          /:title/
+
+# Markdown
+markdown:           kramdown
+
+# # Navigation
+nav:
+  - name:           "About"
+    href:           "/alevel/about/"
+  - name:           "More"
+    href:           "//makurell.github.io"
+
+# Sass
+sass:
+  style:            :compressed
+
+# Scopes
+defaults:
+  -
+    scope:
+      path:         ""
+      type:         "pages"
+    values:
+      layout:       "page"
+  -
+    scope:
+      path:         ""
+      type:         "posts"
+    values:
+      layout:       "post"
+
+exclude: ['README.md']

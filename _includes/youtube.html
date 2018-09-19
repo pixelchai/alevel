@@ -1,0 +1,17 @@
+<div class="youtube"><iframe width="560" height="315" src="https://www.youtube.com/embed/{{ include.id }}?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+<script>
+function updt(){
+	$('.youtube iframe').each(function(i,e){
+		var newWidth=$(e).parent().width();
+		$(e).width(newWidth)
+			.height(newWidth*$(e).data('aspectRatio'));
+	});
+}
+$(document).ready(function(){
+	$('.youtube iframe').each(function(i,e){
+		$(e).data('aspectRatio',e.height/e.width);
+	});
+	updt();
+});
+$(window).resize(updt);
+</script>

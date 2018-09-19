@@ -1,0 +1,7 @@
+<table class="meta-table">
+	{% for meta in page.meta %}
+	{% tablerow row in meta %}
+		{{ row }}
+	{% endtablerow %}
+	{% endfor %}
+</table>
