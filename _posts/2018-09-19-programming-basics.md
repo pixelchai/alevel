@@ -3,6 +3,10 @@ title: Programming Basics
 layout: post
 ---
 
+# Tasks
+
+- [task1](#task-1)
+
 # Data Types
 
 <table class="MsoTable15Plain1" border="1" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;border-collapse:collapse;border:none">
@@ -690,4 +694,121 @@ layout: post
 | Element        | A value within an array or similar data structures           |
 | Record         | ~~One line of text file~~ Aka `struct`: A collection of `fields`, which may be of different types, (the types of which, often defined by a Record Declaration) |
 | Field          | A specific piece of data encapsulated by a `record`. Essentially a variable. |
+
+# Naming Conventions
+
+How to make your code look a little less painful: agreeing that everyone names everything with generally the same pattern :)
+
+Of course, different companies, institutions, etc may have different conventions, but generally, some conventions are:
+
+|                             | Python Convention         | C# Convention          |
+| --------------------------- | ------------------------- | ---------------------- |
+| Class name                  | UpperCamelCase            | UpperCamelCase         |
+| Constants                   | CAPITALISED_SNAKE_CASE    | CAPITALISED_SNAKE_CASE |
+| Variable names              | lower_snake_case          | lowerCamelCase         |
+| Private variable names      | __prepend_two_underscores | _prependUnderscore     |
+| Keyword conflict prevention | _prepend_undescore        | @prependAtSymbol       |
+
+(For C# the conventions are a bit more complex [official conventions here](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions)).
+
+# Code Style Conventions
+
+Similar to naming conventions, but for the syntax of the program.
+
+In C#, for example, often, the starting brackets get their own entire lines :^) - in a lot of other languages, the convention tends to be to keep the starting brackets with the statements before them.
+
+### 1:
+
+```c#
+if (you.hasAnswer()) {
+    you.postAnswer();
+} else {
+    you.doSomething();
+}
+```
+
+### 2:
+
+```csharp
+if (you.hasAnswer())
+{
+    you.postAnswer();
+}
+else
+{
+    you.doSomething();
+}
+```
+
+(and other variants)
+
+In terms of python, there is an extensive official coding style convention defined, called `PEP 8`. [Info here](https://www.python.org/dev/peps/pep-0008/).
+
+# Constants
+
+Potential scenarios where may be appropriate:
+
+- Store program’s build version
+- Internal program config
+
+# Task 1
+
+> In your chosen language declare and assign a value to variables for the following:
+>
+> A student record that would contain the name, age, gender and the total number of
+> lessons they have attended in their whole time at school
+>
+> Once this is complete, take a screenshot showing each variable value printed to the
+> console
+
+```python
+from enum import Enum
+
+class Gender(Enum):
+    UNKNOWN = 0
+    MALE = 1
+    FEMALE = 2
+    OTHER = 3
+
+class Student:
+    def __init__(self,
+                 name='unnamed',
+                 age=-1,
+                 gender=Gender.UNKNOWN,
+                 lessons_count=-1):
+        self.name = name
+        self.age = age
+        self.gender = gender
+        self.lessons_count = lessons_count
+
+    def print(self):
+        just = 20
+        print(('Name:').ljust(just) + str(self.name))
+        print(('Age:').ljust(just) + str(self.age))
+        print(('Gender:').ljust(just) + str(self.gender.name))
+        print(('Lessons Count:').ljust(just) + str(self.lessons_count))
+
+
+bob = Student(name="Bob", age=16, gender=Gender.MALE, lessons_count=3)
+bob.print()
+```
+
+### Explanation
+
+- `Enum` base class is imported from `enum` standard library
+- `Gender` class defined, sub-classing `Enum`.
+  - This is done because gender is intrinsically a categoric data type
+  - some categories are defined and have IDs assigned, which internally represent them.
+- `Student` class defined - serves as the record.
+  - Constructor defined - the code that runs upon instantiation of the class
+    - Some parameters are defined to be accepted in the constructor signature
+      -  have some default values
+    - In body of constructor, attributes (fields) of the class is defined, and are instantiated by the parameter values.
+  - Print method defined
+    - `just` - a variable used for text justification, to make the output look pretty
+    - Each of the attributes are printed
+- Instance of `Student` called `bob` is instantiated, with some parameters
+- the `print` method of the instance is called, so as to print the attributes, as asked in the question.
+
+
 
