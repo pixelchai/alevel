@@ -6,6 +6,8 @@ layout: post
 # Tasks
 
 - [task1](#task-1)
+- [task2](#task-2)
+- [task3](#task-3)
 
 # Data Types
 
@@ -810,5 +812,96 @@ bob.print()
 - Instance of `Student` called `bob` is instantiated, with some parameters
 - the `print` method of the instance is called, so as to print the attributes, as asked in the question.
 
+### Output
 
+```
+Name:               Bob
+Age:                16
+Gender:             MALE
+Lessons Count:      3
+```
+
+# Task 2
+
+> Declare a new data type, assign values to the variables and screenshot evidence of the code and printout to the console
+
+```python
+class NewType:
+    def __init__(self):
+        self.a=2
+inst=NewType()
+inst.a=923
+print(inst.a)
+```
+
+user defined types’ behaviour achieved with class instances
+
+Here, the class ‘NewType’ is defined with attribute ‘a’ which is initialised to some value. Demonstration of instantiating that class and replacing attribute ‘a’ with some other variable + demonstration of attribute access.
+
+# Task 3
+
+>  Write a program that asks the user for their name and greets them with their name (you will need to use a scanner to read from the keyboard).
+
+```python
+print("Hello, "+input("Please enter your name: "))
+print(SEPARATOR)
+```
+
+> Write a program that asks the user for 2 numbers, stores them and prints the sum of the numbers
+
+```python
+num1=int(input("Enter a number: "))
+num2=int(input("Enter a number: "))
+print(num1+num2)
+print(SEPARATOR)
+```
+
+> Write a program that prints a multiplication table for numbers up to 12 (loop).
+
+```python
+for i in range(13):
+    print(str(i)+" times tables: ")
+    for j in range(13):
+        print(str(i)+"x"+str(j)+"=="+str(i*j))
+    input("press enter to continue")
+```
+
+>Write a program that prints the next 20 leap years (loop).
+
+```python
+from datetime import datetime
+cur_year=datetime.now().year
+for i in range(cur_year, cur_year+(20*4)+1):
+  if i%4==0: print(i)
+```
+
+> Write a guessing game where the user has to guess a secret number. After every guess the program tells the user whether their number was too large or too small. At
+> the end the number of tries needed should be printed.
+
+```python
+attempts_limit=10
+attempts=1
+num=random.randint(0,100)
+print("My number is between 0 and 100. Try guess it.")
+while True:
+    guess=int(input("Enter a guess: "))
+    if attempts>=attempts_limit: # extension
+        print("You ran out of attempts")
+        break
+    if guess>num:
+        print("Too high~")
+    elif guess<num:
+        print("Too low~")
+    else:
+        print("Yep~")
+        print("It took you " + str(attempts) + " attempts")
+        break
+    attempts+=1
+```
+
+> Write a program that computes the reversal of a string. For example, reverse("I am testing") should return the string "gnitset ma I".
+
+```python
+print(''.join(list(reversed(input("Enter a string to reverse: ")))))
+```
 

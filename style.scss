@@ -9,6 +9,7 @@ $cl: #74c4e7; //#268bd2
 $cbbf: #2e2e2e; //#f9f9f9
 $cbbbf: #999;
 $cbb: #1a1a1a;
+$c-code-background: #191919;
 
 // light colours
 // $cb: #fff;
@@ -406,7 +407,7 @@ tbody tr:nth-child(odd) th {
 
 .highlight {
   margin-bottom: 1.5em;
-  background: #191919;
+  background: $c-code-background;
   color: #ffffff;
   overflow-x: auto;
   @include rounded(4px);
@@ -516,5 +517,7 @@ blockquote{
   code{
     white-space: pre;
     padding: 0;
+    border: $c-code-background;
+    background-color: $c-code-background;
   }
 }
