@@ -10,6 +10,7 @@ layout: post
 - [task1](#task-1)
 - [task2](#task-2)
 - [task3](#task-3)
+- [task4](#task-4)
 
 ### End of Chapter Tasks
 
@@ -830,6 +831,58 @@ Lessons Count:      3
 
 # Task 2
 
+Data types examples
+
+```python
+number = 1
+string = 'seven'
+Boolean = True
+Groceries = ['apple', 'pear', 'Lego']
+number2 = 3.141
+```
+
+Data types can essentially be split into integral, numerical, squential and other categories. (See above table).
+
+| Type       | Info                                                         |
+| ---------- | ------------------------------------------------------------ |
+| Integral   | Numbers with no fractional parts. The maximum and minimum numbers that can be stored depends on the amount of memory assigned (see table above for details). |
+| Numerical  | Real numbers which may or may not have fractional parts. The maximum and minimum numbers that can be stored as well as the decimal precision of the numbers stored depend on the amount of memory assigned + implementation |
+| Sequential | Things like arrays and dictionaries. An array is a data structure used for holding multiple values/objects ( `elements`) (see above) |
+| String     | This data type stores text, and is actually usually internally just an array of integers, where each integer represents a certain character (the integer being the character’s ID in a way). Which integers correspond to which characters is defined in an Encoding. The most popular such Encodings are `UTF` and `ASCII` |
+
+
+
+In the string section just now ASCII was mentioned. Here are some glyphs defined by ASCII and their respective values:
+
+| Hex | Glyph  |
+|-----|--------|
+| 30  | 0      |
+| 31  | 1      |
+| 32  | 2      |
+| 33  | 3      |
+| 34  | 4      |
+| 35  | 5      |
+| 36  | 6      |
+| 37  | 7      |
+| 38  | 8      |
+| 39  | 9      |
+| 3A  | :      |
+| 3B  | ;      |
+| 3C  | <      |
+| 3D  | =      |
+| 3E  | >      |
+| 3F  | ?      |
+| 40  | @      |
+| 41  | A      |
+| 42  | B      |
+| 43  | C      |
+| 44  | D      |
+| 45  | E      |
+| 46  | F      |
+
+
+# Task 3
+
 > Declare a new data type, assign values to the variables and screenshot evidence of the code and printout to the console
 
 ```python
@@ -845,7 +898,7 @@ user defined types’ behaviour achieved with class instances
 
 Here, the class ‘NewType’ is defined with attribute ‘a’ which is initialised to some value. Demonstration of instantiating that class and replacing attribute ‘a’ with some other variable + demonstration of attribute access.
 
-# Task 3
+# Task 4
 
 >  Write a program that asks the user for their name and greets them with their name (you will need to use a scanner to read from the keyboard).
 
@@ -999,5 +1052,4 @@ a=[
 
 ## Built-in Data-Types
 
-See top of the page
-
+See top of the page.
