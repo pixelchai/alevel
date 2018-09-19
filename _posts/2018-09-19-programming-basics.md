@@ -14,6 +14,7 @@ layout: post
 ### End of Chapter Tasks
 
 - [EOC tasks](#eoc-tasks)
+- [Research tasks](#research-tasks)
 
 # Data Types
 
@@ -945,10 +946,58 @@ print(''.join(list(reversed(input("Enter a string to reverse: ")))))
          - name follows snake_case naming convention
          - Most languages provide classes for things like this - in python, it is DateTime
       3. tot_takings, Decimal
-         - ‘’
-         - ‘’
+         - (same as above)
+         - (same as above)
       4. wear_pos, Enum
-         - ‘’
-         - Please do not: “adapt a Boolean variable so that Right was stored as True and Left as False” as the textbook says because that is not scalable at all and is quite unintuitive - unless you named the variable something like “wear_on_left”, which makes sense to either be True or False.
+         - (same as above)
+         - Please do not: “adapt a Boolean variable so that Right was stored as True and Left as False” as the textbook says because that is not scalable at all and is quite unintuitive - unless you named the variable something like “wear_on_right”, which makes sense to either be True or False.
          - Enum: A set of unique named values. In other words, the data-type will be a category in a sense, out of a defined set of categories. These categories may be “Left” and “Right”.
+
+# Research Tasks
+
+## n dimensional arrays
+
+1. An array = a data structure used for holding multiple values/objects `elements` (see above). 
+2. An instance of an array is an object.
+3. This means you can put it inside an array.
+4. Put arrays inside arrays
+5. Now you have a 2-dimensional array
+6. repeat from step 3 until you have an n-dimensional array where n is any number you want
+7. ???
+8. profit
+
+```python
+# array
+a=[ 
+]
+# 2 dimensional array
+a=[
+    [],
+    [],
+    ...,
+    []
+]
+# 3 dimensional array
+a=[
+    [
+        [],
+       	[],
+        ...,
+        []
+    ],
+    ...
+]
+
+.
+.
+.
+# n dimensional array
+a=[
+    ...
+]
+```
+
+## Built-in Data-Types
+
+See top of the page
 
