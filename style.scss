@@ -1,6 +1,18 @@
 ---
 ---
 
+// dark colours
+$cb: #222; //#fff;
+$cf: #fff; // #000
+$cbf: #777; //#ddd
+$cl: #74c4e7; //#268bd2
+
+// light colours
+// $cb: #fff;
+// $cf: #000;
+// $cbf: #ddd;
+// $cl: #268bd2;
+
 @mixin rounded($radius:4px) {
   -webkit-border-radius : $radius;
   -moz-border-radius : $radius;
@@ -34,14 +46,14 @@ html {
 }
 
 body {
-  color: #000;
-  background-color: #fff;
+  color: $cf;
+  background-color: $cb;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
 
 a {
-  color: #268bd2;
+  color: $cl;
   text-decoration: none;
   
   &:hover,
@@ -55,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: .5rem;
   font-weight: 600;
   line-height: 1.1;
-  color: #333;
+  color: $cf;
   letter-spacing: -.025rem;
 }
 
@@ -142,7 +154,7 @@ hr {
 }
 
 strong {
-  color: #333;
+  color: $cf;
   font-weight: 600;
 }
 
@@ -175,11 +187,11 @@ pre {
 }
 
 code {
-  padding: .25em .5em;
+  // padding: .25em .5em;
   font-size: 85%;
   // color: #bf616a;
   // background-color: #f9f9f9;
-  border-radius: 3px;
+  // border-radius: 3px;
 }
 
 pre {
@@ -283,7 +295,7 @@ tbody tr:nth-child(odd) th {
     font-weight: 300;
     
     a {
-      color: #333;
+      color: $cf;
       
       &:hover,
       &:focus {
@@ -292,7 +304,7 @@ tbody tr:nth-child(odd) th {
     }
     
     span {
-      color: #ddd;
+      color: $cbf;
     }
     
   }
@@ -304,7 +316,7 @@ tbody tr:nth-child(odd) th {
     text-transform: uppercase;
     
     a {
-      color: #333;
+      color: $cf;
       
       &:hover,
       &:focus {
@@ -317,7 +329,7 @@ tbody tr:nth-child(odd) th {
     margin-bottom: 2rem;
     
     a {
-      color: #aaa;
+      color: $cbf;
       font-weight: 300;
       text-transform: lowercase;
       -webkit-transition: all .2s ease;
@@ -326,7 +338,7 @@ tbody tr:nth-child(odd) th {
 
       &:hover,
       &:focus {
-        color: #333;
+        color: $cf;
         text-decoration: none;
       }
 
@@ -360,7 +372,7 @@ tbody tr:nth-child(odd) th {
     margin-bottom: .25rem;
     
     a {
-      color: #333;
+      color: $cf;
       
       &:hover,
       &:focus {
@@ -377,13 +389,13 @@ tbody tr:nth-child(odd) th {
 
 .projects-list {
   a {
-    color: #333;
+    color: $cf;
   }
 }
 
 .highlight {
   margin-bottom: 1.5em;
-  background: #1d1f21;
+  background: #191919;
   color: #ffffff;
   overflow-x: auto;
   @include rounded(4px);
