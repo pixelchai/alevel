@@ -1,2 +1,2 @@
-# AQA-Compsci
-Work relating to the AQA Computer Science Course
+# alevel
+My work, notes, etc relating to the AQA A-Level Computer Science Course
