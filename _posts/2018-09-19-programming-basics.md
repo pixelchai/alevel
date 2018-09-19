@@ -5,9 +5,15 @@ layout: post
 
 # Tasks
 
+### Programming Tasks
+
 - [task1](#task-1)
 - [task2](#task-2)
 - [task3](#task-3)
+
+### End of Chapter Tasks
+
+- [EOC tasks](#eoc-tasks)
 
 # Data Types
 
@@ -904,4 +910,45 @@ while True:
 ```python
 print(''.join(list(reversed(input("Enter a string to reverse: ")))))
 ```
+
+# EOC Tasks
+
+### Questions
+
+1. Two reasons why meaningful variable names
+
+2. Examples to explain difference between constant and variable
+
+3. Why important to declare all variables + constants at start of program
+
+4. Difference between value and variable.
+
+5. Suggest types and names for
+
+   1. current rate of vat
+   2. today’s date
+   3. total takings from shop
+   4. dob
+   5. which wrist person wears watch on
+
+   ### Answers
+
+   1. So that both you and other people can more easily understand what is going on in your code.
+   2. A constant cannot be changed at program runtime, whereas variables can. Defining variables that don’t change as constants may result in code being more optimised, so constants should be used as much as possible for variables that don’t change at runtime. An example usage would be the program’s build version. An example of a non-constant variable, however, for example, would be the number of tables in a room. What if someone takes a table out of the room and you have to update the variable? :^)
+   3. Global variables, and constants should definitely be defined near the top of a program, or the specific scope, so that you can easily see which such variables you have defined when working on your program. More broadly, it also should for the purpose of adhering to good coding practices and conventions, for the sake of making your code more readable (for not just you but others).
+   4. The word ‘variable’ is commonly used to refer to the name given to a specific piece of data and also the piece of data itself. The word ‘value’, however, is usually used solely when referring to the data itself.
+   5. answers:
+      1. VAT_RATE, decimal
+         - name follows constant naming conventions
+         - decimal because decimal provide good accuracy when working with base-10 decimal numbers, such as the values for VAT
+      2. cur_date, DateTime
+         - name follows snake_case naming convention
+         - Most languages provide classes for things like this - in python, it is DateTime
+      3. tot_takings, Decimal
+         - ‘’
+         - ‘’
+      4. wear_pos, Enum
+         - ‘’
+         - Please do not: “adapt a Boolean variable so that Right was stored as True and Left as False” as the textbook says because that is not scalable at all and is quite unintuitive - unless you named the variable something like “wear_on_left”, which makes sense to either be True or False.
+         - Enum: A set of unique named values. In other words, the data-type will be a category in a sense, out of a defined set of categories. These categories may be “Left” and “Right”.
 
