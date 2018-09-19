@@ -904,8 +904,11 @@ Here, the class ‘NewType’ is defined with attribute ‘a’ which is initial
 
 ```python
 print("Hello, "+input("Please enter your name: "))
-print(SEPARATOR)
 ```
+### Explanation
+- Get user input from terminal
+- append that to the string `"Hello, "`
+- print the concatenated string
 
 > Write a program that asks the user for 2 numbers, stores them and prints the sum of the numbers
 
@@ -913,8 +916,11 @@ print(SEPARATOR)
 num1=int(input("Enter a number: "))
 num2=int(input("Enter a number: "))
 print(num1+num2)
-print(SEPARATOR)
 ```
+### Explanation
+- initialise a variable `num1`: from user input casted to an integer type, given the prompt `"Enter a number"`.
+- '' `num2` ''
+- output the sum of the two variables
 
 > Write a program that prints a multiplication table for numbers up to 12 (loop).
 
@@ -925,6 +931,11 @@ for i in range(13):
         print(str(i)+"x"+str(j)+"=="+str(i*j))
     input("press enter to continue")
 ```
+### Explanation
+- for each stage as `i` varies from 0 to 12, being incremented by 1 each iteration, do the following:
+  - print `i` prepended to the string `" times tables: "`
+  - for each stage as `j` varies from 0 to 12, being incremented by 1 each iteration, do the following:
+    - print `i` concatenated with `"x"` concatenated with `j` concatenated with `"=="` concatenated with the product of `i` and `j` 
 
 >Write a program that prints the next 20 leap years (loop).
 
@@ -934,6 +945,15 @@ cur_year=datetime.now().year
 for i in range(cur_year, cur_year+(20*4)+1):
   if i%4==0: print(i)
 ```
+
+### Explanation
+#### Mod:
+
+The modulus function `mod(a, b)`, represented in most languages through the use of the infix operator `%` like `a % b`, gives the remainder after the integer division of `a` by `b`. This means that if `a % b` is equals to 0, for any values of `a` and `b`, it can be concluded that `a` is fully divisible by `b`.
+
+- as the variable `i` ranges from the current year (2018) to the year +(20*4):
+  - it is checked whether `mod(i,4)` is 0, which would imply that `i` is fully divisible by `4` - and so `i` is a leap year.
+  - If this is the case, `i` is outputted.
 
 > Write a guessing game where the user has to guess a secret number. After every guess the program tells the user whether their number was too large or too small. At
 > the end the number of tries needed should be printed.
@@ -946,7 +966,7 @@ print("My number is between 0 and 100. Try guess it.")
 while True:
     guess=int(input("Enter a guess: "))
     if attempts>=attempts_limit: # extension
-        print("You ran out of attempts")
+        print("You ran out of attempts ("+str(attempts)+")")
         break
     if guess>num:
         print("Too high~")
@@ -959,52 +979,67 @@ while True:
     attempts+=1
 ```
 
+### Explanation
+- a random number is generated
+- the `while` loop keeps looping until the number is guessed, or until the attempts limit is reached, at which point the loop is broken.
+- At each loop, a guess is inputted through the terminal. If it is not correct, the program outputs whether the guess is too high or low using the `>` and `<` comparison operators.
+
 > Write a program that computes the reversal of a string. For example, reverse("I am testing") should return the string "gnitset ma I".
 
 ```python
 print(''.join(list(reversed(input("Enter a string to reverse: ")))))
 ```
 
+### Explanation
+- `reversed(..)` returns a generator for the reversed list from a list (remember that a `string` is internally a list)
+- since it returns a generator, it must be converted into a list like so: `list(reversed(..))`
+- `''.join(..)` joins a list of strings into one big string. This is used because the previous bullet point meant that a list of strings (each representing 1 character) is returned.
+
 # EOC Tasks
 
 ### Questions
 
-1. Two reasons why meaningful variable names
+> Two reasons why meaningful variable names
 
-2. Examples to explain difference between constant and variable
+So that both you and other people can more easily understand what is going on in your code.
 
-3. Why important to declare all variables + constants at start of program
+> Examples to explain difference between constant and variable
 
-4. Difference between value and variable.
+A constant cannot be changed at program runtime, whereas variables can. Defining variables that don’t change as constants may result in code being more optimised, so constants should be used as much as possible for variables that don’t change at runtime. An example usage would be the program’s build version. An example of a non-constant variable, however, for example, would be the number of tables in a room. What if someone takes a table out of the room and you have to update the variable? :^)
 
-5. Suggest types and names for
+> Why important to declare all variables + constants at start of program
 
-   1. current rate of vat
-   2. today’s date
-   3. total takings from shop
-   4. dob
-   5. which wrist person wears watch on
+Global variables, and constants should definitely be defined near the top of a program, or the specific scope, so that you can easily see which such variables you have defined when working on your program. More broadly, it also should for the purpose of adhering to good coding practices and conventions, for the sake of making your code more readable (for not just you but others).
 
-   ### Answers
+> Difference between value and variable.
 
-   1. So that both you and other people can more easily understand what is going on in your code.
-   2. A constant cannot be changed at program runtime, whereas variables can. Defining variables that don’t change as constants may result in code being more optimised, so constants should be used as much as possible for variables that don’t change at runtime. An example usage would be the program’s build version. An example of a non-constant variable, however, for example, would be the number of tables in a room. What if someone takes a table out of the room and you have to update the variable? :^)
-   3. Global variables, and constants should definitely be defined near the top of a program, or the specific scope, so that you can easily see which such variables you have defined when working on your program. More broadly, it also should for the purpose of adhering to good coding practices and conventions, for the sake of making your code more readable (for not just you but others).
-   4. The word ‘variable’ is commonly used to refer to the name given to a specific piece of data and also the piece of data itself. The word ‘value’, however, is usually used solely when referring to the data itself.
-   5. answers:
-      1. VAT_RATE, decimal
-         - name follows constant naming conventions
-         - decimal because decimal provide good accuracy when working with base-10 decimal numbers, such as the values for VAT
-      2. cur_date, DateTime
-         - name follows snake_case naming convention
-         - Most languages provide classes for things like this - in python, it is DateTime
-      3. tot_takings, Decimal
-         - (same as above)
-         - (same as above)
-      4. wear_pos, Enum
-         - (same as above)
-         - Please do not: “adapt a Boolean variable so that Right was stored as True and Left as False” as the textbook says because that is not scalable at all and is quite unintuitive - unless you named the variable something like “wear_on_right”, which makes sense to either be True or False.
-         - Enum: A set of unique named values. In other words, the data-type will be a category in a sense, out of a defined set of categories. These categories may be “Left” and “Right”.
+The word ‘variable’ is commonly used to refer to the name given to a specific piece of data and also the piece of data itself. The word ‘value’, however, is usually used solely when referring to the data itself.
+
+> Suggest types and names for all of the following:
+>
+> - current rate of vat
+>
+> - today’s date
+>
+> - total takings from shop
+> - dob
+> - which wrist person wears watch on
+
+1. VAT_RATE, decimal
+      - name follows constant naming conventions
+      - decimal because decimal provide good accuracy when working with base-10 decimal numbers, such as the values for VAT
+2. cur_date, DateTime
+      - name follows snake_case naming convention
+      - Most languages provide classes for things like this - in python, it is DateTime
+3. tot_takings, Decimal
+      - (same as above)
+      - (same as above)
+4. wear_pos, Enum
+      - (same as above)
+      - Please do not: “adapt a Boolean variable so that Right was stored as True and Left as False” as the textbook says because that is not scalable at all and is quite unintuitive - unless you named the variable something like “wear_on_right”, which makes sense to either be True or False.
+      - Enum: A set of unique named values. In other words, the data-type will be a category, in a sense, out of a defined set of categories. These categories may be “Left” and “Right”.
+
+
 
 # Research Tasks
 
@@ -1041,9 +1076,9 @@ a=[
     ...
 ]
 
-.
-.
-.
+# .
+# .
+# .
 # n dimensional array
 a=[
     ...
