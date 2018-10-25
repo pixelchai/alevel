@@ -24,7 +24,7 @@ Here is some python code which demonstrates code which executes depending on cer
 age=int(input("Age: "))
 if age<16:
     print("You are too young to drive")
-elif age<=16:
+elif age>=16:
     print("You are old enough to ride a motorcycle")
 elif age>=70:
     print("You need to requalify to drive a car")
