@@ -34,4 +34,4 @@ defaults:
     values:
       layout:       "post"
 
-exclude: ['README.md']
+exclude: ['README.md', 'vendor']

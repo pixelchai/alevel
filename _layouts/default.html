@@ -1,100 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
   <!-- jquery -->
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-124106463-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124106463-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-124106463-2');
-</script>
+    gtag('config', 'UA-124106463-2');
+  </script>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600">
   <link rel="stylesheet" href="{{ site.baseurl }}/style.css">
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.slim.js"
-  integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.js"
+    integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA=" crossorigin="anonymous"></script>
   <script>
-  var hover_reset=false;
-  function init(){
-    $('span[class^="t"]').each(function (){
-      var depth = $(this,"p").parents('span[class^="t"]').length+1
-      var val=255-(depth*30);
-      $(this).css('cssText','background-color: rgb('+val+','+val+','+val+')');
-    })
-  };
-  function reset(){
-    $('span[class^="t"]').each(function (){
-      var depth = $(this,"p").parents('span[class^="t"]').length+1
-      if(depth>1){
-        $(this).css('cssText','background-color:inherit');
-      }else{
-        $(this).css('cssText','background-color:#dedede');
-      }
-    });
-  }
-  $(document).ready(function(){
-    init();
-    var objs=$('span[class^="t"]');
+    var hover_reset = false;
+    function init() {
+      $('span[class^="t"]').each(function () {
+        var depth = $(this, "p").parents('span[class^="t"]').length + 1
+        var val = 255 - (depth * 30);
+        $(this).css('cssText', 'background-color: rgb(' + val + ',' + val + ',' + val + ')');
+      })
+    };
+    function reset() {
+      $('span[class^="t"]').each(function () {
+        var depth = $(this, "p").parents('span[class^="t"]').length + 1
+        if (depth > 1) {
+          $(this).css('cssText', 'background-color:inherit');
+        } else {
+          $(this).css('cssText', 'background-color:#dedede');
+        }
+      });
+    }
+    $(document).ready(function () {
+      init();
+      var objs = $('span[class^="t"]');
 
-    objs.mouseenter(function(e){
-      if(!hover_reset){
-        reset();
-        hover_reset=true;
-      }
-      var depth=$(this,"p").parents('span[class^="t"]').length+2;
+      objs.mouseenter(function (e) {
+        if (!hover_reset) {
+          reset();
+          hover_reset = true;
+        }
+        var depth = $(this, "p").parents('span[class^="t"]').length + 2;
 
-      var val=255-(depth*30);
-      $('span.'+$(this).attr('class')).css('cssText','background-color: rgb('+val+','+val+','+val+')');
-    });
+        var val = 255 - (depth * 30);
+        $('span.' + $(this).attr('class')).css('cssText', 'background-color: rgb(' + val + ',' + val + ',' + val + ')');
+      });
 
-    objs.mouseleave(function(e){
-      var depth=$(this,"p").parents('span[class^="t"]').length+2;
-      
-      if(depth>2){
-        $('span.'+$(this).attr('class')).css('cssText','background-color: inherit');
-      }else{
-        $('span.'+$(this).attr('class')).css('cssText','background-color: #dedede');
-      }
+      objs.mouseleave(function (e) {
+        var depth = $(this, "p").parents('span[class^="t"]').length + 2;
+
+        if (depth > 2) {
+          $('span.' + $(this).attr('class')).css('cssText', 'background-color: inherit');
+        } else {
+          $('span.' + $(this).attr('class')).css('cssText', 'background-color: #dedede');
+        }
+      });
     });
-  });
   </script>
 
   <!-- Katex rendering -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css" integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv" crossorigin="anonymous">
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+    integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
   <!-- The loading of KaTeX is deferred to speed up page rendering -->
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js" integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O" crossorigin="anonymous"></script>
-  <script>
-  $(document).ready(function(){
-    $("script[type='math/tex']").replaceWith(function() {
-        var tex = $(this).text();
-        return katex.renderToString(tex, {displayMode: false});
-    });
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+    integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz"
+    crossorigin="anonymous"></script>
 
-    $("script[type='math/tex; mode=display']").replaceWith(function() {
-        var tex = $(this).html();
-        return katex.renderToString(tex.replace(/%.*/g, ''), {displayMode: true});
-    });
-  });
-</script>
+  <!-- To automatically render math in text elements, include the auto-render extension: -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
-  </head>
+</head>
+
 <body>
   <div class="container">
     {{ content }}
   </div>
 </body>
+
 </html>
