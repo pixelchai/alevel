@@ -1,37 +1,35 @@
 # Basic
-title:               "ALevel"
+title: "ALevel"
 
 # URL
-baseurl:            "/alevel"
-permalink:          /:title/
+baseurl: "/alevel"
+permalink: /:title/
 
 # Markdown
-markdown:           kramdown
+markdown: kramdown
 
 # # Navigation
 nav:
-  - name:           "About"
-    href:           "/alevel/about/"
-  - name:           "More"
-    href:           "//makurell.github.io"
+    - name: "About"
+      href: "/alevel/about/"
+    - name: "More"
+      href: "//pozogo.github.io"
 
 # Sass
 sass:
-  style:            :compressed
+    style: :compressed
 
 # Scopes
 defaults:
-  -
-    scope:
-      path:         ""
-      type:         "pages"
-    values:
-      layout:       "page"
-  -
-    scope:
-      path:         ""
-      type:         "posts"
-    values:
-      layout:       "post"
+    - scope:
+          path: ""
+          type: "pages"
+      values:
+          layout: "page"
+    - scope:
+          path: ""
+          type: "posts"
+      values:
+          layout: "post"
 
-exclude: ['README.md', 'vendor']
+exclude: ["README.md", "vendor"]
